@@ -78,6 +78,8 @@ runs:
       env: 
         SONAR_TOKEN: ${{ inputs.sonar_token }}
         GITHUB_TOKEN: ${{ inputs.github_token }}
+      args: >
+        --define sonar.cfamily.compile-commands="${{ env.source_dir }}/compile_commands.json"
 
     - name: Clean up .scannerwork folder
       # Sonarcloud schedules cleanup at END of workflow, if another action does a checkout before this, it will break.
