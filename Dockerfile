@@ -32,4 +32,4 @@ RUN dnf update -y; dnf install trivy -y; rm -rf /var/cache
 
 ## Expose port and run app
 # EXPOSE 8080
-# CMD [ /app/out/install/example  ]
+# CMD [ /app/out/build/cpp-template  ]
