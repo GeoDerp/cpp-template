@@ -4,8 +4,8 @@ on: [push]
 
 env:
   DOCKER_IMAGE_NAME: ""
-  SONAR_ORGANIZATION: ""
-  SONAR_PROJECT_KEY: ""
+  SONAR_ORGANIZATION: "geoderp"
+  SONAR_PROJECT_KEY: "GeoDerp_cpp-template"
   PROJECT_DIR: "."
   BUILD_SYSTEM: "Ninja"
   
