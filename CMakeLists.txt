@@ -7,3 +7,5 @@ include(CTest)
 enable_testing()
 
 set_property(TARGET cpp-template PROPERTY CXX_STANDARD 23)
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
