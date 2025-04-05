@@ -4,7 +4,8 @@
 	"name": "cpp",
 	"build": {
 		"dockerfile": "../Dockerfile",
-		"context": "../"
+		"context": "../",
+		"target": "dev"
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {}
@@ -18,27 +19,35 @@
 		"--userns=keep-id",
 		"--pid=host"
 	],
-	"remoteUser": "root",
-	"containerUser": "root",
-
 	"customizations": {
 		// Configure properties specific to VS Code.
 		"vscode": {
 		  "extensions": [
 			"ms-vscode.cpptools-extension-pack",
-			"SonarSource.sonarlint-vscode",
+			// optional
+			"ms-azuretools.vscode-docker",
+			"Semgrep.semgrep",
 			"AquaSecurityOfficial.trivy-vulnerability-scanner",
+			"GitHub.vscode-github-actions",
+			"eamodio.gitlens",
+			"redhat.vscode-yaml",
+			"redhat.vscode-xml",
+			"ecmel.vscode-html-css",
+			"bierner.markdown-mermaid",
+			"esbenp.prettier-vscode",
+			"mechatroner.rainbow-csv",
+			"editorconfig.editorconfig"
 		],
 		  "settings": {
 			"[cpp]": {
-			  "editor.formatOnSave": true,
-			  "editor.codeActionsOnSave": {
-				"source.fixAll": "explicit",
-				"source.organizeImports": "explicit"
-			  },
-			  "editor.defaultFormatter": "ms-vscode.cpptools"
-			}
+			  "editor.defaultFormatter": "ms-vscode.cpptools",
+			},
+			 "editor.tabSize": 4,
+			 "workbench.tree.indent": 14,
+			 "trivy.offlineScan": true
+			 //"files.autoSaveWhenNoErrors": true,
+			 //"files.autoSaveWorkspaceFilesOnly": true
 		  }
 		}
-	  }	  
-}
+	  }
+	}
